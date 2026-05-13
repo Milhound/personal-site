@@ -1,0 +1,82 @@
+#resume {
+    @apply relative;
+    padding: 0 2rem;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+}
+
+#resume hr {
+    width: 95%;
+}
+
+#resume .title > h2 {
+    @apply float-left mt-0;
+}
+
+#resume .title:after {
+    @apply table clear-both;
+    content: "";
+}
+
+#resume .bold {
+    @apply inline font-bold;
+    margin-left: 2rem;
+}
+
+.company {
+    @apply block font-bold;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+#resume span {
+    @apply float-right;
+}
+
+#resume p {
+    margin-left: 2rem;
+}
+
+.download-btn {
+    @apply fixed cursor-pointer uppercase;
+    background: white;
+    bottom: 2rem;
+    right: 2rem;
+    border: 2px solid black;
+    font-family: inherit;
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn:hover {
+    background: black;
+    color: white;
+}
+
+@media not print {
+    body.dark .download-btn {
+        @apply border-neutral-300 text-neutral-300 bg-dark-bg;
+    }
+
+    body.dark .download-btn:hover {
+        @apply bg-neutral-300 text-dark-bg;
+    }
+}
+
+@media print {
+    .download-btn {
+        display: none;
+    }
+}
+
+.experience-list {
+    list-style-type: square;
+    margin-top: 0;
+    margin-left: 1.5rem;
+}
+
+.cert-list {
+    list-style-type: none;
+    padding: 0;
+}

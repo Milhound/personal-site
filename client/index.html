@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/image/favicon.png" />
+    <link rel="apple-touch-icon" type="image/png" href="/image/apple-touch-icon.png" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <meta name="author" content="Daniel Milholland" />
+    <meta name="copyright" content="Daniel Milholland" />
+    <meta name="contact" content="Milhound@gmail.com" />
+    <meta name="description" content="Personal Website of Daniel Milholland (@Milhound), Tech enthusiast." />
+    <meta name="keywords" content="Daniel, Milholland, Milhound, Personal, Website, Portfolio, Web, Design, Java, HTML, CSS, Python, Front end, Developer" />
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Daniel Milholland" />
+    <meta property="og:description" content="Personal website and portfolio of Daniel Milholland — IBM Security MaaS360 System Architect, developer, and tech enthusiast." />
+    <meta property="og:url" content="https://milhound.com/" />
+    <meta property="og:image" content="https://milhound.com/image/daniel.jpg" />
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Daniel Milholland" />
+    <meta name="twitter:description" content="Personal website and portfolio of Daniel Milholland — IBM Security MaaS360 System Architect, developer, and tech enthusiast." />
+    <meta name="twitter:image" content="https://milhound.com/image/daniel.jpg" />
+    <title>Daniel Milholland</title>
+  </head>
+  <body>
+    <script>
+      // Apply dark mode before React mounts to prevent flash
+      (function () {
+        try {
+          var m = document.cookie.match(/(?:^|;\s*)theme=([^;]+)/);
+          if (m && m[1] === 'dark') document.body.classList.add('dark');
+        } catch (e) {}
+      })();
+      // Dynamic copyright year
+      document.querySelector('meta[name="copyright"]').content =
+        '\u00a9 ' + new Date().getFullYear() + ' Daniel Milholland';
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

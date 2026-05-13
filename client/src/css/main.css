@@ -1,0 +1,357 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global */
+* {
+    @apply box-border;
+}
+
+body {
+    @apply flex flex-col m-0;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+a {
+    @apply no-underline text-site-blue;
+}
+
+a:hover {
+    @apply underline text-site-dark-blue;
+}
+
+/* Bio */
+#bio h2 {
+    @apply inline-block mb-0;
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+}
+
+#bio ul {
+    margin: 0 auto;
+}
+
+#bio .subCategory {
+    @apply pl-4;
+}
+
+.experience-heading {
+    margin: 0.75rem;
+}
+
+#bio .subParagraph {
+    @apply pl-8;
+}
+
+#bio .subList {
+    @apply ml-4 list-[upper-roman];
+}
+
+#bio p {
+    margin: 1rem 1.3rem;
+}
+
+#bio #experience .row {
+    @apply w-full flex flex-row justify-around;
+    padding: 0 2%;
+}
+
+#bio #experience .row h4 {
+    @apply text-center;
+}
+
+/* Nav */
+header {
+    @apply flex items-end justify-center w-full mx-auto p-0;
+}
+
+header #title {
+    @apply uppercase mr-auto;
+    font-size: 1.5rem;
+}
+
+header #nav .nav-link {
+    @apply mx-4;
+    font-size: 1.2rem;
+}
+
+header #nav .nav-link:hover,
+header #nav .nav-link.active {
+    @apply no-underline text-black font-bold;
+}
+
+header #nav:nth-child(2) {
+    margin-right: 2rem;
+}
+
+/* Sidebar */
+#sidebar :is(h1, h2, h3, h4, h5, h6) {
+    @apply w-full text-center m-0;
+}
+
+#sidebar a,
+#sidebar button {
+    @apply uppercase border-none bg-transparent;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
+    color: inherit;
+    font-family: inherit;
+}
+
+/* Theme toggle pill */
+#themeToggle {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer;
+}
+
+.toggle-track {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 3.5rem;
+    height: 1.75rem;
+    border-radius: 9999px;
+    @apply bg-white border-black;
+    border-width: 2px;
+    border-style: solid;
+    transition: background 0.3s, border-color 0.3s;
+    overflow: hidden;
+}
+
+body.dark .toggle-track {
+    @apply bg-dark-bg border-black;
+}
+
+.toggle-thumb {
+    position: absolute;
+    left: 0.15rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 9999px;
+    @apply bg-black;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark .toggle-thumb {
+    transform: translateX(1.7rem);
+    @apply bg-slate-300;
+}
+
+.toggle-icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+    @apply text-slate-900;
+}
+
+body.dark .toggle-icon {
+    @apply text-neutral-300;
+}
+
+.toggle-icon--sun {
+    left: 0.2rem;
+    opacity: 1;
+}
+
+.toggle-icon--moon {
+    right: 0.2rem;
+    opacity: 0.6;
+}
+
+body.dark .toggle-icon--sun {
+    opacity: 0.6;
+}
+
+body.dark .toggle-icon--moon {
+    opacity: 1;
+}
+
+/* Skip link */
+.skip-link {
+    @apply absolute uppercase text-site-blue;
+    top: -100%;
+    left: 0;
+    background: white;
+    padding: 0.5rem 1rem;
+    z-index: 100;
+    font-size: 0.9rem;
+    border: 2px solid;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Content */
+#main-content {
+    padding-bottom: 4rem;
+}
+
+/* Darkmode */
+@media not print {
+    body.dark .skip-link {
+        @apply bg-dark-bg text-dark-link;
+    }
+
+    body.dark {
+        @apply text-neutral-300 bg-dark-bg;
+    }
+
+    body.dark a {
+        @apply text-dark-link;
+    }
+
+    body.dark footer,
+    body.dark header {
+        @apply bg-dark-surface;
+    }
+
+    body.dark header #nav .nav-link:hover,
+    body.dark header #nav .nav-link.active {
+        @apply text-neutral-300 font-bold;
+    }
+}
+
+/* Mobile: Small */
+@media screen and (max-width: 650px) {
+    header {
+        @apply flex-wrap;
+        margin-bottom: 1rem;
+    }
+
+    #title {
+        @apply mr-0 w-full text-center;
+    }
+
+    #bio p {
+        @apply ml-0 text-justify;
+    }
+}
+
+/* Mobile: Standard */
+@media screen and (max-width: 760px) {
+    header #title {
+        margin-left: 1rem;
+    }
+
+    #sidebar {
+        @apply flex flex-wrap justify-center;
+    }
+
+    #sidebar img {
+        @apply w-[90%] object-contain object-top h-auto;
+        margin: 0 5%;
+        max-height: 30rem;
+    }
+
+    #sidebar :is(h1, h2, h3, h4, h5, h6) {
+        @apply hidden;
+    }
+
+    #sidebar a,
+    #sidebar button {
+        margin: 1rem 0.3rem;
+    }
+
+    #bio {
+        @apply pl-4;
+    }
+
+    #bio #experience .row {
+        @apply flex-col;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 760px) {
+    .wrapper {
+        @apply flex flex-nowrap;
+    }
+
+    header {
+        @apply flex-nowrap border-b-2 border-solid border-black;
+    }
+
+    header #title {
+        margin-left: 1rem;
+    }
+
+    #sidebar {
+        @apply fixed left-0 flex flex-col items-center h-full border-r-2 border-t-0 border-solid border-black;
+        max-width: 10%;
+        min-width: 110px !important;
+        padding: 1rem;
+    }
+
+    #sidebar img {
+        @apply w-full;
+        border-radius: 0.35rem;
+    }
+
+    #sidebar h2 {
+        margin-top: 0.5rem;
+    }
+
+    #sidebar h3 {
+        margin: 0.3rem 0;
+    }
+
+    #sidebar a,
+    #sidebar button {
+        margin: 0.25rem 0;
+    }
+
+    #sidebar #themeToggle {
+        @apply mt-auto;
+        margin-bottom: 5rem;
+    }
+
+    #main-content {
+        @apply flex-1;
+        min-width: 0;
+    }
+
+    #sidebar ~ #main-content {
+        @apply fixed right-0 w-[90%] h-full overflow-y-scroll pl-8;
+        padding-bottom: 4rem;
+    }
+}
+
+/* Print */
+@media print {
+    header {
+        display: none !important;
+    }
+
+    footer {
+        display: none !important;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    #sidebar {
+        @apply hidden;
+    }
+
+    #main-content {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        overflow: visible !important;
+        padding-left: 0 !important;
+    }
+
+    #resume {
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 1rem;
+    }
+}
