@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Privacy() {
   useEffect(() => {
-    document.title = 'Privacy Policy – Daniel Milholland';
+    document.title = 'Privacy Policy - Daniel Milholland';
   }, []);
   return (
     <div id="main-content" className="max-w-[860px] mx-auto my-8 px-4">
@@ -92,25 +92,25 @@ function Privacy() {
         We would like to make sure you are fully aware of all of your data protection rights. Every
         user is entitled to the following:
       </p>
-      <p>The right to access – You have the right to request copies of your personal data.</p>
+      <p>The right to access - You have the right to request copies of your personal data.</p>
       <p>
-        The right to rectification – You have the right to request that we correct any information
+        The right to rectification - You have the right to request that we correct any information
         you believe is inaccurate.
       </p>
       <p>
-        The right to erasure – You have the right to request that we erase your personal data, under
+        The right to erasure - You have the right to request that we erase your personal data, under
         certain conditions.
       </p>
       <p>
-        The right to restrict processing – You have the right to request that we restrict the
+        The right to restrict processing - You have the right to request that we restrict the
         processing of your personal data, under certain conditions.
       </p>
       <p>
-        The right to object to processing – You have the right to object to our processing of your
+        The right to object to processing - You have the right to object to our processing of your
         personal data, under certain conditions.
       </p>
       <p>
-        The right to data portability – You have the right to request that we transfer the data that
+        The right to data portability - You have the right to request that we transfer the data that
         we have collected to another organization, or directly to you, under certain conditions.
       </p>
       <p>

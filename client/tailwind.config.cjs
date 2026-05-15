@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Brand blues (IBM palette — nearest standard is blue-600 #2563eb)
-        'site-blue':      '#0058e6',
-        'site-dark-blue': '#003180',
+        // Warm link palette for light-mode tan surfaces
+        'site-blue':      '#7a4f2c',
+        'site-dark-blue': '#5d3b20',
         // Dark mode palette
         'dark-bg':        '#2c3038',
         'dark-link':      '#88b0ff',
