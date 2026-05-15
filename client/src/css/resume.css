@@ -9,6 +9,13 @@
     width: 95%;
 }
 
+#resume h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.25rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid currentColor;
+}
+
 #resume .title > h2 {
     @apply float-left mt-0;
 }
@@ -19,22 +26,51 @@
 }
 
 #resume .bold {
-    @apply inline font-bold;
-    margin-left: 2rem;
+    @apply font-bold;
 }
 
 .company {
-    @apply block font-bold;
+    @apply block font-bold uppercase tracking-wide;
+    margin-left: 2rem;
+    margin-top: 1.5rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid currentColor;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+}
+
+#resume .title span {
+    @apply float-right;
+}
+
+.role-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     margin-left: 2rem;
     margin-top: 1rem;
 }
 
-#resume span {
-    @apply float-right;
+.experience-block {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.role-header span {
+    flex-shrink: 0;
+    margin-left: 1rem;
+    font-style: italic;
+    font-size: 0.9rem;
 }
 
 #resume p {
     margin-left: 2rem;
+}
+
+#resume .summary-text {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    line-height: 1.45;
 }
 
 .download-btn {
@@ -68,6 +104,53 @@
     .download-btn {
         display: none;
     }
+
+    #resume {
+        padding: 0 1.25rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #resume h3 {
+        margin-top: 1.25rem;
+    }
+
+    #resume .company {
+        margin-top: 1rem;
+    }
+
+    #resume .role-header {
+        margin-top: 0.6rem;
+    }
+
+    #resume .experience-list {
+        margin-bottom: 0.45rem;
+        font-size: 0.95rem;
+    }
+
+    #resume h3,
+    #resume .company,
+    #resume .role-header,
+    #resume .experience-list,
+    #resume .cert-list,
+    #resume .cert-list li,
+    #resume .experience-list li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    #resume h3,
+    #resume .company,
+    #resume .role-header {
+        break-after: avoid-page;
+        page-break-after: avoid;
+    }
+
+    #resume .experience-list,
+    #resume .cert-list {
+        break-before: avoid-page;
+        page-break-before: avoid;
+    }
 }
 
 .experience-list {
@@ -79,4 +162,27 @@
 .cert-list {
     list-style-type: none;
     padding: 0;
+}
+
+.cert-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.1rem 0;
+}
+
+.cert-list li span {
+    flex-shrink: 0;
+    margin-left: 1rem;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.skill-category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.55;
+    margin-left: 0.25rem;
 }
