@@ -1,6 +1,26 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@layer theme, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme {
+    /* Palette */
+    --color-light-contrast: #1f2937;
+    --color-light-base: #b3a694;
+    --color-light-surface: #f7f3eb;
+    --color-light-accent: rgb(122, 79, 44);
+    
+    --color-dark-contrast: #f7f3eb;
+    --color-dark-base: #212429;
+    --color-dark-surface: #2d3037;
+    --color-dark-accent: #558eff;
+    
+    /* Utility tokens */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+@reference "tailwindcss";
 
 /* Global */
 * {
@@ -12,17 +32,20 @@ body {
     font-family: "IBM Plex Sans", sans-serif;
 }
 
-body:not(.dark) {
-    background: #f5f1e8;
-    color: #1f2937;
+a, button {
+    @apply border-none bg-transparent no-underline;
 }
 
-a {
-    @apply no-underline text-site-blue;
+body {
+    @apply bg-light-surface text-light-contrast;
 }
 
-a:hover {
-    @apply underline text-site-dark-blue;
+a, button {
+    @apply text-light-accent;
+}
+
+a:hover, button:hover {
+    @apply text-light-contrast;
 }
 
 /* Bio */
@@ -36,33 +59,12 @@ a:hover {
     margin: 0 auto;
 }
 
-#bio .subCategory {
-    @apply pl-4;
-}
-
 .experience-heading {
     margin: 0.75rem;
 }
 
-#bio .subParagraph {
-    @apply pl-8;
-}
-
-#bio .subList {
-    @apply ml-4 list-[upper-roman];
-}
-
 #bio p {
     margin: 1rem 1.3rem;
-}
-
-#bio #experience .row {
-    @apply w-full flex flex-row justify-around;
-    padding: 0 2%;
-}
-
-#bio #experience .row h4 {
-    @apply text-center;
 }
 
 /* Nav */
@@ -70,8 +72,8 @@ header {
     @apply flex items-end justify-center w-full mx-auto p-0;
 }
 
-body:not(.dark) header {
-    background: #b3a694;
+header {
+    @apply bg-light-base;
 }
 
 header #title {
@@ -86,7 +88,7 @@ header #nav .nav-link {
 
 header #nav .nav-link:hover,
 header #nav .nav-link.active {
-    @apply no-underline text-slate-900 font-bold;
+    @apply text-light-contrast font-bold;
 }
 
 header #nav:nth-child(2) {
@@ -98,8 +100,8 @@ header #nav:nth-child(2) {
     @apply w-full text-center m-0;
 }
 
-body:not(.dark) #sidebar {
-    background: #b3a694;
+#sidebar {
+    @apply bg-light-base;
 }
 
 #sidebar a,
@@ -108,8 +110,11 @@ body:not(.dark) #sidebar {
     font-size: 0.9rem;
     cursor: pointer;
     padding: 0;
-    color: inherit;
     font-family: inherit;
+}
+
+.contact-link {
+    @apply text-light-accent hover:text-light-contrast;
 }
 
 /* Theme toggle pill */
@@ -127,19 +132,12 @@ body:not(.dark) #sidebar {
     width: 3.5rem;
     height: 1.75rem;
     border-radius: 9999px;
-    @apply bg-white border-black;
+    @apply border-black;
     border-width: 2px;
     border-style: solid;
     transition: background 0.3s, border-color 0.3s;
     overflow: hidden;
-}
-
-body:not(.dark) .toggle-track {
     background-color: rgba(255, 255, 255, 0.65);
-}
-
-body.dark .toggle-track {
-    @apply bg-dark-bg border-black;
 }
 
 .toggle-thumb {
@@ -149,13 +147,13 @@ body.dark .toggle-track {
     height: 1.2rem;
     border-radius: 9999px;
     @apply bg-black;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    box-shadow: var(--shadow-sm);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body.dark .toggle-thumb {
+[data-theme="dark"] .toggle-thumb {
     transform: translateX(1.7rem);
-    @apply bg-slate-300;
+    @apply bg-dark-contrast;
 }
 
 .toggle-icon {
@@ -164,11 +162,11 @@ body.dark .toggle-thumb {
     align-items: center;
     justify-content: center;
     transition: opacity 0.2s;
-    @apply text-slate-900;
+    @apply text-dark-base;
 }
 
-body.dark .toggle-icon {
-    @apply text-neutral-300;
+[data-theme="dark"] .toggle-icon {
+    @apply text-dark-contrast;
 }
 
 .toggle-icon--sun {
@@ -181,17 +179,17 @@ body.dark .toggle-icon {
     opacity: 0.6;
 }
 
-body.dark .toggle-icon--sun {
+[data-theme="dark"] .toggle-icon--sun {
     opacity: 0.6;
 }
 
-body.dark .toggle-icon--moon {
+[data-theme="dark"] .toggle-icon--moon {
     opacity: 1;
 }
 
 /* Skip link */
 .skip-link {
-    @apply absolute uppercase text-site-blue;
+    @apply absolute uppercase text-light-accent;
     top: -100%;
     left: 0;
     background: white;
@@ -207,40 +205,52 @@ body.dark .toggle-icon--moon {
 
 /* Content */
 #main-content {
+    @apply bg-light-surface;
     padding-bottom: 4rem;
 }
 
-body:not(.dark) #main-content {
-    background: #f7f3eb;
+/* Dark mode */
+[data-theme="dark"] {
+    @apply text-dark-contrast bg-dark-surface;
 }
 
-/* Darkmode */
-@media not print {
-    body.dark .skip-link {
-        @apply bg-dark-bg text-dark-link;
-    }
+[data-theme="dark"] .skip-link {
+    @apply bg-dark-surface text-dark-accent;
+}
 
-    body.dark #sidebar {
-        @apply bg-dark-surface;
-    }
+[data-theme="dark"] #sidebar {
+    @apply bg-dark-base;
+}
 
-    body.dark {
-        @apply text-neutral-300 bg-dark-bg;
-    }
+[data-theme="dark"] a {
+    @apply text-dark-accent;
+}
 
-    body.dark a {
-        @apply text-dark-link;
-    }
+[data-theme="dark"] footer,
+[data-theme="dark"] header {
+    @apply bg-dark-base;
+}
 
-    body.dark footer,
-    body.dark header {
-        @apply bg-dark-surface;
-    }
+[data-theme="dark"] header #nav .nav-link:hover,
+[data-theme="dark"] header #nav .nav-link.active {
+    @apply text-dark-contrast font-bold;
+}
 
-    body.dark header #nav .nav-link:hover,
-    body.dark header #nav .nav-link.active {
-        @apply text-neutral-300 font-bold;
-    }
+[data-theme="dark"] .toggle-track {
+    @apply bg-dark-base;
+    border-color: black;
+}
+
+[data-theme="dark"] .contact-link {
+    color: var(--color-dark-accent);
+}
+
+[data-theme="dark"] .contact-link:hover {
+    color: var(--color-dark-contrast);
+}
+
+[data-theme="dark"] #main-content {
+    @apply bg-dark-surface;
 }
 
 /* Mobile: Small */
@@ -388,8 +398,15 @@ body:not(.dark) #main-content {
         display: none !important;
     }
 
+    a {
+        color: black !important;
+        text-decoration: underline !important;
+    }
+
     body {
         padding: 0;
+        background: white !important;
+        color: black !important;
     }
 
     #sidebar {

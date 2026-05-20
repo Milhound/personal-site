@@ -78,6 +78,8 @@ function Home({ darkMode, toggleTheme }: HomeProps) {
           </section>
         </div>
       </div>
+      <div className="text-taupe-600">
+      </div>
     </>
   );
 }

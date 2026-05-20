@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'client/dist')));
 
 // Send all requests to the React app (client-side routing)
-app.get('*', (_req: Request, res: Response) => {
+app.use((_req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
 });
 

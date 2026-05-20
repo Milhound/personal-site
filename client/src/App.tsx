@@ -29,11 +29,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add('dark');
-    } else {
-      document.body.classList.remove('dark');
-    }
+    document.body.dataset.theme = darkMode ? 'dark' : 'light';
   }, [darkMode]);
 
   function toggleTheme(): void {
