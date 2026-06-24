@@ -1,8 +1,6 @@
 services:
-  web:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  milhound-site:
+    image: ghcr.io/milhound/personal-site:latest
     ports:
       - "${APP_PORT:-3001}:3001"
     environment:
