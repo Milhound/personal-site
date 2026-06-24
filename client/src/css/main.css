@@ -5,10 +5,10 @@
 
 @theme {
     /* Palette */
-    --color-light-contrast: #1f2937;
-    --color-light-base: #b3a694;
-    --color-light-surface: #f7f3eb;
-    --color-light-accent: rgb(122, 79, 44);
+    --color-light-contrast: #12243d;
+    --color-light-base: #d7e7ff;
+    --color-light-surface: #f0f4f8;
+    --color-light-accent: #2f6fe4;
     
     --color-dark-contrast: #f7f3eb;
     --color-dark-base: #212429;

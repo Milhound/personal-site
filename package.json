@@ -11,17 +11,17 @@
     "test:routes": "npm run build --prefix client && tsx --test test/routes.test.ts"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.3.0",
+    "@tailwindcss/cli": "^4.3.1",
     "express": "^5.2.1",
-    "tailwindcss": "^4.3.0"
+    "tailwindcss": "^4.3.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
-    "@types/node": "^25.9.0",
+    "@types/node": "^25.9.4",
     "@types/supertest": "^7.2.0",
-    "concurrently": "^9.2.1",
+    "concurrently": "^9.2.3",
     "supertest": "^7.2.2",
-    "tsx": "^4.22.2",
+    "tsx": "^4.22.4",
     "typescript": "^6.0.3"
   }
 }
