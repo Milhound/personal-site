@@ -52291,9 +52291,10 @@ var require_express = __commonJS((exports, module) => {
 // server.ts
 var import_express = __toESM(require_express(), 1);
 import path from "path";
+var __dirname = "/Users/w13/Documents/personal-site";
 var app = import_express.default();
 var PORT = process.env.PORT || 3001;
-var projectRoot = path.join(import.meta.dir, "..");
+var projectRoot = import.meta.dir ? path.join(import.meta.dir, "..") : __dirname;
 var clientDistPath = path.join(projectRoot, "client/dist");
 app.use(import_express.default.static(clientDistPath));
 app.use((_req, res) => {

@@ -5,8 +5,8 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Serve static files from the React build
-// Use import.meta.dir (Bun-specific) to get runtime directory, then go up to project root
-const projectRoot = path.join(import.meta.dir, '..');
+// Use import.meta.dir (Bun) or __dirname fallback (Node.js) to get runtime directory
+const projectRoot = import.meta.dir ? path.join(import.meta.dir, '..') : __dirname;
 const clientDistPath = path.join(projectRoot, 'client/dist');
 app.use(express.static(clientDistPath));
 
