@@ -4,11 +4,11 @@
   "description": "Daniel Milholland's personal site",
   "main": "server.ts",
   "scripts": {
-    "start": "tsx server.ts",
-    "dev": "concurrently \"tsx server.ts\" \"npm run dev --prefix client\"",
-    "build": "npm run build --prefix client",
-    "install-all": "npm install && npm install --prefix client",
-    "test:routes": "npm run build --prefix client && tsx --test test/routes.test.ts"
+    "start": "bun ./build/server.js",
+    "dev": "concurrently \"tsx server.ts\" \"bun run dev --cwd client\"",
+    "build": "bun build ./server.ts --outdir ./build --target bun",
+    "install-all": "bun install && bun install --cwd client",
+    "test:routes": "bun build ./server.ts --outdir ./build --target bun && tsx --test test/routes.test.ts"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.3.1",

@@ -18,21 +18,21 @@ Simple personal portfolio site for Daniel Milholland.
 ## Prerequisites
 
 - Node.js 20+
-- npm 9+
+- bun 9+
 
 ## Install
 
 Install dependencies for both root and client:
 
 ```bash
-npm ci
-npm ci --prefix client
+bun ci
+bun ci --cwd client
 ```
 
 If you prefer a single command:
 
 ```bash
-npm run install-all
+bun run install-all
 ```
 
 ## Run
@@ -40,20 +40,20 @@ npm run install-all
 Run both Express and Vite in development:
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 Run Express server only:
 
 ```bash
-npm start
+bun start
 ```
 
 Default server URL:
 
 - `http://localhost:3001`
 
-Vite dev server URL (when using `npm run dev`):
+Vite dev server URL (when using `bun run dev`):
 
 - `http://localhost:5173`
 
@@ -62,7 +62,7 @@ Vite dev server URL (when using `npm run dev`):
 Build the React client for production:
 
 ```bash
-npm run build
+bun run build
 ```
 
 Build output:
@@ -90,7 +90,7 @@ That maps the host port you choose to the container's `3001` port.
 Builds the client, then validates SPA routes and SEO files:
 
 ```bash
-npm run test:routes
+bun run test:routes
 ```
 
 Covers:
@@ -106,8 +106,8 @@ Covers:
 Run dependency audits:
 
 ```bash
-npm audit
-npm audit --prefix client
+bun audit
+bun audit --cwd client
 ```
 
 ## CI

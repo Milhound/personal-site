@@ -4,17 +4,18 @@ WORKDIR /app
 
 FROM base AS deps
 
-COPY package*.json ./
-COPY client/package*.json client/
+COPY package*.json bun.lock ./
+COPY client/package*.json client/bun.lock client/
 
 RUN bun ci
-RUN bun ci --prefix client
+RUN bun ci --cwd client
 
 FROM deps AS build
 
 COPY . .
 
-RUN bun run build
+RUN bun build ./server.ts --outdir ./build --target bun
+RUN cd client && bun run build
 
 FROM base AS runner
 
@@ -24,7 +25,7 @@ WORKDIR /app
 
 COPY --from=deps /app/package*.json ./
 COPY --from=deps /app/node_modules ./node_modules
-COPY --from=build /app/server.ts ./server.ts
+COPY --from=build /app/build ./build
 COPY --from=build /app/client/dist ./client/dist
 
 EXPOSE 3001
