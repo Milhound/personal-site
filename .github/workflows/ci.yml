@@ -14,14 +14,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: 20
-          cache: bun
-          cache-dependency-path: |
-            package-lock.json
-            client/package-lock.json
+          bun-version: latest
 
       - name: Install root dependencies
         run: bun ci
@@ -29,10 +25,13 @@ jobs:
       - name: Install client dependencies
         run: bun ci --cwd client
 
+      - name: Build server
+        run: bun build ./server.ts --outdir ./build --target bun
+
       - name: Build client
         run: bun run build --cwd client
 
-      - name: Build Docker image
+      - name: Build and test Docker image
         run: docker compose build
 
       - name: Run route tests
