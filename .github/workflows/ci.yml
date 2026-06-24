@@ -29,7 +29,7 @@ jobs:
         run: bun build ./server.ts --outdir ./build --target bun
 
       - name: Build client
-        run: bun run build --cwd client
+        run: cd client && bun run build
 
       - name: Build and test Docker image
         run: docker compose build
