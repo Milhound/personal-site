@@ -7,14 +7,14 @@ FROM base AS deps
 COPY package*.json ./
 COPY client/package*.json client/
 
-RUN npm ci
-RUN npm ci --prefix client
+RUN bun ci
+RUN bun ci --prefix client
 
 FROM deps AS build
 
 COPY . .
 
-RUN npm run build
+RUN bun run build
 
 FROM base AS runner
 
@@ -29,4 +29,4 @@ COPY --from=build /app/client/dist ./client/dist
 
 EXPOSE 3001
 
-CMD ["npm", "start"]
+CMD ["bun", "start"]
