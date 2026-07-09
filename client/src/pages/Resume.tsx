@@ -24,12 +24,14 @@ function Resume() {
 
             <h3>PROFESSIONAL SUMMARY</h3>
             <p className="summary-text">
-              Technical Advisory Engineer and System Architect specializing in
-              enterprise mobility management, identity, and endpoint security.
-              Trusted advisor for Fortune 500 organizations, with hands-on
-              experience leading cross-functional support and engineering
-              initiatives, mentoring teams, and improving customer outcomes
-              through API, automation, and platform expertise.
+              IBM Technical Advisory Engineer and System Architect with
+              experience in shell scripting, automation, Linux administration,
+              software engineering, and cross-functional technical support in
+              fast-paced operational environments. Trusted partner to internal
+              teams and enterprise customers, with hands-on experience
+              troubleshooting complex platform issues, compiling and packaging
+              applications, and improving delivery workflows through scripting,
+              Docker, GitHub Actions, and API-driven tooling.
             </p>
 
             <h3>CERTIFICATIONS</h3>
@@ -45,36 +47,32 @@ function Resume() {
             <h3>TECHNICAL SKILLS</h3>
             <ul className="experience-list">
               <li>
-                MaaS360, Microsoft inTune, Samsung Knox, Google Workspace{" "}
-                <span className="skill-category">EMM</span>
+                Shell scripting, Python, JavaScript, Rust, Bash, PowerShell{" "}
+                <span className="skill-category">Languages</span>
+              </li>
+              <li>
+                Docker, Docker Compose, GitHub Actions, REST APIs, Ansible{" "}
+                <span className="skill-category">Automation</span>
+              </li>
+              <li>
+                macOS, Windows, Debian, Fedora{" "}
+                <span className="skill-category">Platforms</span>
+              </li>
+              <li>
+                MaaS360, Microsoft Intune, Samsung Knox, Google Workspace{" "}
+                <span className="skill-category">Endpoint</span>
               </li>
               <li>
                 Azure, Entra ID, Cloud Identity Connect{" "}
-                <span className="skill-category">IDP</span>
+                <span className="skill-category">Identity</span>
               </li>
               <li>
-                Scripting (Python, Bash &amp; Powershell), API (SOAP &amp;
-                Rest), Web Development{" "}
-                <span className="skill-category">Project</span>
+                MySQL/Maria, PostgreSQL, SQLite{" "}
+                <span className="skill-category">Database</span>
               </li>
               <li>
-                Python, Golang, Javascript, Rust{" "}
-                <span className="skill-category">Language</span>
-              </li>
-              <li>
-                MySQL, Postgres <span className="skill-category">Database</span>
-              </li>
-              <li>
-                Salesforce, Jira, Confluence, W3Publisher, Drupal{" "}
-                <span className="skill-category">CRM</span>
-              </li>
-              <li>
-                iOS, Android, Mac OS X, Windows, Debian, Fedora{" "}
-                <span className="skill-category">Platform</span>
-              </li>
-              <li>
-                Microsoft CA, Digicert{" "}
-                <span className="skill-category">Encryption</span>
+                Jira, Confluence, Salesforce, Drupal{" "}
+                <span className="skill-category">Collaboration</span>
               </li>
             </ul>
 
@@ -88,12 +86,33 @@ function Resume() {
                 <span>March 2021 - Present</span>
               </div>
               <ul className="experience-list">
-                <li>iOS/Mac and Web Service API Subject Matter Expert (SME)</li>
-                <li>Lead AI-driven CRM and user experience projects</li>
-                <li>Consultant for Fortune 500 customers</li>
-                <li>Customer success liaison for Development L3</li>
-                <li>Led a 5-person Scrum team</li>
-                <li>Delivered L1/L2 technical training</li>
+                <li>
+                  Serve as iOS/Mac and Web Services API SME for support and
+                  engineering teams
+                </li>
+                <li>
+                  Build internal tools and workflow improvements using scripting,
+                  APIs, and automation
+                </li>
+                <li>
+                  Compile and package Go applications for internal use cases
+                </li>
+                <li>
+                  Use Docker and Compose to support repeatable development and
+                  testing workflows
+                </li>
+                <li>
+                  Support CI/CD workflows through GitHub Actions pipelines for
+                  build, validation, and delivery automation
+                </li>
+                <li>
+                  Partner with development, support, and customer-facing teams
+                  to troubleshoot complex technical issues
+                </li>
+                <li>
+                  Lead technical training, mentor peers, and support
+                  cross-functional delivery initiatives
+                </li>
               </ul>
             </div>
 
@@ -105,14 +124,21 @@ function Resume() {
                 <span>October 2020 - March 2021</span>
               </div>
               <ul className="experience-list">
-                <li>Develop internal support tools</li>
-                <li>Provide small group trainings to L1 agents</li>
+                <li>Developed internal support tools and process improvements</li>
+                <li>Provided small-group technical training to L1 agents</li>
                 <li>
-                  Worked with the management team to create KPR metrics for L1
+                  Worked with management to define KPI and reporting metrics for
+                  L1 operations
                 </li>
-                <li>Generate reports for long-standing support cases</li>
-                <li>Provide on-call assistance to L1</li>
-                <li>Handle customer and sales escalations</li>
+                <li>
+                  Generated reporting and analysis for long-standing technical
+                  support cases
+                </li>
+                <li>Provided on-call assistance for escalations and outages</li>
+                <li>
+                  Coordinated with support leadership, sales, and engineering on
+                  critical issues
+                </li>
               </ul>
             </div>
 
@@ -125,14 +151,17 @@ function Resume() {
               </div>
               <ul className="experience-list">
                 <li>
-                  Manage device policies for Android, iOS, Mac OS, and Windows
-                  10
+                  Managed device policies for Android, iOS, macOS, and Windows
+                  environments
                 </li>
                 <li>
-                  Assist technical and non-technical persons with complex EMM
-                  capabilities
+                  Resolved complex endpoint management issues for technical and
+                  non-technical users
                 </li>
-                <li>Assist management with technical insight</li>
+                <li>
+                  Supported fast-paced operational workflows requiring strong
+                  troubleshooting and communication skills
+                </li>
               </ul>
             </div>
 
@@ -143,19 +172,29 @@ function Resume() {
                 <span>July 2013 - April 2018</span>
               </div>
               <ul className="experience-list">
-                <li>Develop and maintain a database for Warehouse tracking</li>
-                <li>Maintained network infrastructure and server systems</li>
                 <li>
-                  Implemented security protocols and data backup solutions
+                  Developed and maintained a warehouse tracking database and
+                  supporting tools
                 </li>
                 <li>
-                  Administer repairs, updates, and complete configuration of
-                  Windows and Mac systems
+                  Administered network infrastructure, server systems, and user
+                  endpoints
                 </li>
-                <li>Train employees in Windows and Mac operating systems</li>
                 <li>
-                  Assist users experiencing hardware, software, and/or
-                  networking issues
+                  Implemented security controls, backup processes, and system
+                  maintenance procedures
+                </li>
+                <li>
+                  Configured, repaired, and updated Windows and Mac systems for
+                  business operations
+                </li>
+                <li>
+                  Trained employees on operating systems, tools, and support
+                  processes
+                </li>
+                <li>
+                  Resolved hardware, software, and networking issues across the
+                  environment
                 </li>
               </ul>
             </div>
