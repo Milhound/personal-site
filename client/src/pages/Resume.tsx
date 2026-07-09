@@ -168,7 +168,7 @@ function Resume() {
             <div className="company">GAIL WINDS LOGISTICS</div>
             <div className="experience-block">
               <div className="role-header">
-                <div className="bold">System Administrator</div>
+                <div className="bold">Systems Engineer</div>
                 <span>July 2013 - April 2018</span>
               </div>
               <ul className="experience-list">
