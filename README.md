@@ -1,119 +1,40 @@
-# Personal Site (React + Express)
+# milhound.com
 
-Simple personal portfolio site for Daniel Milholland.
+Personal site for Daniel Milholland: plain HTML and CSS with no build step,
+no dependencies, and no server code. Caddy serves the files directly.
 
-- Frontend: React + Vite + Tailwind CSS
-- Backend: Express (serves built SPA from `client/dist`)
-- Routing: React Router with server-side SPA fallback
-- Extras: Dark mode toggle, printable resume view, sitemap/robots, route tests
+## Layout
 
-## Project Structure
+- `site/index.html`, `site/resume.html`, `site/privacy.html`, `site/404.html`: the pages
+- `site/css/site.css`: all styles
+- `site/js/site.js`: the only script (dark-mode toggle and the resume's print button)
+- `site/image/`, `site/robots.txt`, `site/sitemap.xml`: static assets
+- `deploy.sh`: copies `site/` to `/var/www/milhound.com`
 
-- `server.ts`: Express server entry point
-- `client/`: React application
-- `client/public/sitemap.xml`: Search engine sitemap
-- `client/public/robots.txt`: Crawler rules
-- `test/routes.test.ts`: Route and static-file tests
+## Editing
 
-## Prerequisites
+Edit the HTML in `site/` directly. The header and `<head>` block are repeated
+in each page, so change them in all four files.
 
-- Node.js 20+
-- bun 9+
-
-## Install
-
-Install dependencies for both root and client:
+Preview locally with any static file server, for example:
 
 ```bash
-bun ci
-bun ci --cwd client
+cd site && python3 -m http.server 8080
 ```
 
-If you prefer a single command:
+(Clean URLs like `/resume` need Caddy; locally, open `/resume.html`.)
+
+## Deploying
 
 ```bash
-bun run install-all
+./deploy.sh
 ```
 
-## Run
+Caddy's `www.milhound.com` block serves `/var/www/milhound.com`, maps `/resume`
+to `resume.html`, and serves `404.html` for missing pages.
 
-Run both Express and Vite in development:
+## History
 
-```bash
-bun run dev
-```
-
-Run Express server only:
-
-```bash
-bun start
-```
-
-Default server URL:
-
-- `http://localhost:3001`
-
-Vite dev server URL (when using `bun run dev`):
-
-- `http://localhost:5173`
-
-## Build
-
-Build the React client for production:
-
-```bash
-bun run build
-```
-
-Build output:
-
-- `client/dist/`
-
-## Docker
-
-Build and run the app with Compose:
-
-```bash
-docker compose up --build
-```
-
-The app is exposed on port `3001` by default. To change the host port, set `APP_PORT` before starting Compose:
-
-```bash
-APP_PORT=8080 docker compose up --build
-```
-
-That maps the host port you choose to the container's `3001` port.
-
-## Test Routes
-
-Builds the client, then validates SPA routes and SEO files:
-
-```bash
-bun run test:routes
-```
-
-Covers:
-
-- `/`
-- `/resume`
-- `/privacy`
-- `/robots.txt`
-- `/sitemap.xml`
-
-## Security Audit
-
-Run dependency audits:
-
-```bash
-bun audit
-bun audit --cwd client
-```
-
-## CI
-
-GitHub Actions workflow:
-
-- `.github/workflows/ci.yml`
-
-It runs install, build, route tests, and dependency audits on push/pull request.
+Until November 2026 this was a React + Express app built with Bun and run in a
+Docker container. It was converted to static files to remove the dependencies
+and their recurring security alerts. The old version is in git history.

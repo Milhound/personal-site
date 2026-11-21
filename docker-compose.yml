@@ -1,9 +1,0 @@
-services:
-  milhound-site:
-    container_name: milhound.com
-    image: ghcr.io/milhound/personal-site:latest
-    ports:
-      - "127.0.0.1:${APP_PORT:-3001}:3001"
-    environment:
-      PORT: 3001
-    restart: unless-stopped
